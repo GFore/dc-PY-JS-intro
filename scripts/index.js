@@ -8,8 +8,8 @@
 // console.log(greeting);
 // greeting = greeting + "!"
 function dayOfWeek() {
-    const theDay = Number(prompt("Day"));
-    let dayName = '';
+    const theDay = Number(document.getElementById("id_dayNum").value);
+    let dayName = 'Not a valid day number ya biggy dummy!';
 
     switch (theDay) {
         case 0:
@@ -35,12 +35,50 @@ function dayOfWeek() {
             break;
         
     };
-    console.log(dayName);
+    document.getElementById("id_result4").innerHTML = `Result: <span class="res">${dayName}</span>`;
 }
 
-function clearResult(inputName, resultName) {
+function workOrSleep() {
+    const theDay = Number(document.getElementById("id_dayNum2").value);
+    let strReply = 'Not a valid day number ya biggy dummy!';
+
+    if (theDay > 0 && theDay < 6) {
+        strReply = "Go to Work";
+    } else if (theDay === 0 || theDay === 6) {
+        strReply = "Sleep in"
+    }
+
+    document.getElementById("id_result5").innerHTML = `Result: <span class="res">${strReply}</span>`;
+    
+}
+
+function celToF() {
+    let myTemp = Number(document.getElementById("id_tempCel").value);
+    let strReply = 'Not a valid temperature ya biggy dummy!';
+    // the formula to convert degrees C to degrees F is: F = C x 1.8 + 32
+
+    if (myTemp > -1001 && myTemp < 1001) {
+        myTemp = myTemp * 1.8 + 32;
+
+        strReply = `Temp in Fahrenheit is: ${myTemp}`;
+    }
+
+    document.getElementById("id_result6").innerHTML = `Result: <span class="res">${strReply}</span>`;
+}
+
+
+function clearResult(inputName, resultName, radioButtonList) {
     inputName.forEach(element => {document.getElementById(element).value = "";});
-    // document.getElementById(inputName).value = "";
+    // radioButtonList.forEach(element => {document.getElementById(element).removeAttribute("checked")});
+
+    //This is supposed to reset any radio buttons to unchecked but it is not working
+    if (radioButtonList.length > 0) {
+        radioButtonList.forEach(element => {
+            if (document.getElementById(element).hasAttribute("checked")) {
+                document.getElementById(element).removeAttribute("checked");
+            }
+        });
+    }
     document.getElementById(resultName).innerHTML = `Result: `;
 }
 
@@ -56,3 +94,17 @@ function madlib() {
     document.getElementById("id_result3").innerHTML = `Result: <span class="res">${document.getElementById("id_name3").value}\'s favorite subject in school is ${document.getElementById("id_subj").value}.</span>`
 }
 
+function tipCalc1() {
+    let totBillAmt = Number(document.getElementById("id_billAmt1").value);
+    let tipAmt = 0;
+    let tipRate = 0.1;
+
+    if (document.querySelector('input[name = "svc"]:checked').value === "good") {
+        tipRate = 0.2;
+    } else if (document.querySelector('input[name = "svc"]:checked').value === "fair") {
+        tipRate = 0.15;
+    }
+
+    document.getElementById("id_result7").innerHTML = `Result:<br><span class="res">Tip Amount: $${(totBillAmt*tipRate).toFixed(2)}</span>`
+    document.getElementById("id_result7").innerHTML += `<br><span class="res">Total Amount: $${(totBillAmt*(1+tipRate)).toFixed(2)}</span>`
+}
