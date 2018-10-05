@@ -5,9 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <script src="scripts/index.js"></script>
+    <header></head><h1>Python Exercises via JS</h1></header>
+    <section><h2>Python 102</h2>
+        <script src="scripts/index.js"></script>
+        <div class="exercise">
+            <h3>Hello, you!</h3>
+            <div class="QandA">
+                <p class="ques">Prompt the user for their name, and then say hello to them.</p>
+                <div class="ans">
+                    <label for="name1">Enter your name: </label><input type="text" name="name1" id="id_name1">
+                    <input type="submit" value="Submit" onclick="exHelloYou();">
+                    <input type="reset" value="Reset" onclick="clearResult(['id_name1'], 'id_result1')">
+                </div>
+                <div class="result" id="id_result1">Result: </div>
+            </div>
+        </div>
+        <div class="exercise">
+            <h3>HELLO, YOU!</h3>
+            <div class="QandA">
+                <p class="ques">Prompt the user for their name, and then yell hello to them.</p>
+                <div class="ans">
+                        <label for="name2">Enter your name: </label><input type="text" name="name2" id="id_name2">
+                        <input type="submit" value="Submit" onclick="exHelloYouCaps();">
+                        <input type="reset" value="Reset" onclick="clearResult(['id_name2'],'id_result2')">
+                    </div>
+                    <div class="result" id="id_result2">Result: </div>
+            </div>
+        </div>
+        <div class="exercise">
+            <h3>Madlib</h3>
+            <div class="QandA">
+                <p class="ques">Prompt the user for the missing words to a Madlib sentence and then print the Madlib.</p>
+                <div class="ans">
+                        <label for="name3">Enter a person's name: </label><input type="text" name="name3" id="id_name3"><br>
+                        <label for="subj">Enter a school subject: </label><input type="text" name="subj" id="id_subj">
+                        <input type="submit" value="Submit" onclick="madlib();">
+                        <input type="reset" value="Reset" onclick="clearResult(['id_name3', 'id_subj'],'id_result3')">
+                    </div>
+                    <div class="result" id="id_result3">Result: </div>
+
+
+            </div>
+        </div>
+    </section>
 </body>
-</html>
