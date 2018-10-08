@@ -60,7 +60,7 @@ function celToF() {
     if (myTemp > -1001 && myTemp < 1001) {
         myTemp = myTemp * 1.8 + 32;
 
-        strReply = `Temp in Fahrenheit is: ${myTemp}`;
+        strReply = `Temp in Fahrenheit is: ${myTemp}&deg;`;
     }
 
     document.getElementById("id_result6").innerHTML = `Result: <span class="res">${strReply}</span>`;
@@ -94,17 +94,22 @@ function madlib() {
     document.getElementById("id_result3").innerHTML = `Result: <span class="res">${document.getElementById("id_name3").value}\'s favorite subject in school is ${document.getElementById("id_subj").value}.</span>`
 }
 
-function tipCalc1() {
-    let totBillAmt = Number(document.getElementById("id_billAmt1").value);
+function tipCalc() {
+    let totBillAmt = Number(document.getElementById("id_billAmt").value);
     let tipAmt = 0;
     let tipRate = 0.1;
+    let perPerson = 0;
 
     if (document.querySelector('input[name = "svc"]:checked').value === "good") {
         tipRate = 0.2;
     } else if (document.querySelector('input[name = "svc"]:checked').value === "fair") {
         tipRate = 0.15;
     }
+    tipAmt = totBillAmt*tipRate
+    totBillAmt += tipAmt
+    perPerson = totBillAmt / Number(document.getElementById("id_billSplit").value)
 
-    document.getElementById("id_result7").innerHTML = `Result: <span class="res">Tip Amount: $${(totBillAmt*tipRate).toFixed(2)}</span>`
-    document.getElementById("id_result7").innerHTML += ` <span class="res">Total Amount: $${(totBillAmt*(1+tipRate)).toFixed(2)}</span>`
+    document.getElementById("id_result7").innerHTML = `Result: <span class="res">Tip Amount: $${tipAmt.toFixed(2)}</span>`
+    document.getElementById("id_result7").innerHTML += ` <span class="res">Total Amount: $${totBillAmt.toFixed(2)}</span>`
+    document.getElementById("id_result7").innerHTML += ` <span class="res">Amount per person: $${perPerson.toFixed(2)}</span>`
 }
