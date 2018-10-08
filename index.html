@@ -21,7 +21,8 @@
                    <label for="id_name1">Enter your name: </label><input type="text" name="name1" id="id_name1">
                     <!-- <input type="submit" value="Submit" onclick="exHelloYou();"> -->
                     <button onclick="exHelloYou();">Submit</button>
-                    <input type="reset" value="Reset" onclick="clearResult(['id_name1'], 'id_result1', [])">
+                    <!-- <input type="reset" value="Reset" onclick="clearResult(['id_name1'], 'id_result1', [])"> -->
+                    <button class="reset" onclick="clearResult(['id_name1'], 'id_result1', [])">Reset</button>
                 </div>
                 <div class="result" id="id_result1">Result: </div>
             </div>
@@ -32,8 +33,10 @@
                 <p class="ques">Prompt the user for their name, and then yell hello to them.</p>
                 <div class="ans">
                         <label for="id_name2">Enter your name: </label><input type="text" name="name2" id="id_name2">
-                        <input type="submit" value="Submit" onclick="exHelloYouCaps();">
-                        <input type="reset" value="Reset" onclick="clearResult(['id_name2'],'id_result2', [])">
+                        <!-- <input type="submit" value="Submit" onclick="exHelloYouCaps();"> -->
+                        <button onclick="exHelloYouCaps();">Submit</button>
+                        <!-- <input type="reset" value="Reset" onclick="clearResult(['id_name2'],'id_result2', [])"> -->
+                        <button class="reset" onclick="clearResult(['id_name2'], 'id_result2', [])">Reset</button>
                     </div>
                     <div class="result" id="id_result2">Result: </div>
             </div>
@@ -44,9 +47,11 @@
                 <p class="ques">Prompt the user for the missing words to a Madlib sentence and then print the Madlib.</p>
                 <div class="ans">
                         <label for="id_name3">Enter a person's name: </label><input type="text" name="name3" id="id_name3"><br>
-                        <label for="id_subj">Enter a school subject: </label><input type="text" name="subj" id="id_subj">
-                        <input type="submit" value="Submit" onclick="madlib();">
-                        <input type="reset" value="Reset" onclick="clearResult(['id_name3', 'id_subj'],'id_result3', [])">
+                        <label for="id_subj">Enter a school subject: </label><input type="text" name="subj" id="id_subj"><br>
+                        <!-- <input type="submit" value="Submit" onclick="madlib();"> -->
+                        <button onclick="madlib();">Submit</button>
+                        <!-- <input type="reset" value="Reset" onclick="clearResult(['id_name3', 'id_subj'],'id_result3', [])"> -->
+                        <button class="reset" onclick="clearResult(['id_name3', 'id_subj'], 'id_result3', [])">Reset</button>
                 </div>
                 <div class="result" id="id_result3">Result: </div>
 

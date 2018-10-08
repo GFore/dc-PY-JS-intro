@@ -50,7 +50,8 @@ h1, h2 {text-align: center}
 
 input {margin-bottom: 5px; height: 20px}
 button {
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
+    /* margin: 10px; */
     height: 25px;
     border-radius: 8px;
     background-color: dodgerblue;
@@ -58,7 +59,11 @@ button {
     border-style: outset;
     font-size: 15px;
 
+
 }
+
+.reset {background-color: red}
+
 @media screen and (min-width: 820px) {
     .exercise {width: 800px; flex-direction: row; }
     .exercise h3 {margin: 0 8px; width: 20%;}
