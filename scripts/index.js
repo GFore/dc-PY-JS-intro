@@ -105,6 +105,6 @@ function tipCalc1() {
         tipRate = 0.15;
     }
 
-    document.getElementById("id_result7").innerHTML = `Result:<br><span class="res">Tip Amount: $${(totBillAmt*tipRate).toFixed(2)}</span>`
-    document.getElementById("id_result7").innerHTML += `<br><span class="res">Total Amount: $${(totBillAmt*(1+tipRate)).toFixed(2)}</span>`
+    document.getElementById("id_result7").innerHTML = `Result: <span class="res">Tip Amount: $${(totBillAmt*tipRate).toFixed(2)}</span>`
+    document.getElementById("id_result7").innerHTML += ` <span class="res">Total Amount: $${(totBillAmt*(1+tipRate)).toFixed(2)}</span>`
 }

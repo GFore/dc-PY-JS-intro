@@ -12,14 +12,15 @@
     <header></head><h1>Python Exercises via JS</h1></header>
     <!-- <section><h2>Python 102</h2> -->
     <script src="scripts/index.js"></script>
-    <details><summary><h2>Python 102</h2></summary>
+    <details open><summary><h2>Python 102</h2></summary>
         <div class="exercise">
             <h3>Hello, you!</h3>
             <div class="QandA">
                 <p class="ques">Prompt the user for their name, and then say hello to them.</p>
                 <div class="ans">
-                    <label for="id_name1">Enter your name: </label><input type="text" name="name1" id="id_name1">
-                    <input type="submit" value="Submit" onclick="exHelloYou();">
+                   <label for="id_name1">Enter your name: </label><input type="text" name="name1" id="id_name1">
+                    <!-- <input type="submit" value="Submit" onclick="exHelloYou();"> -->
+                    <button onclick="exHelloYou();">Submit</button>
                     <input type="reset" value="Reset" onclick="clearResult(['id_name1'], 'id_result1', [])">
                 </div>
                 <div class="result" id="id_result1">Result: </div>
