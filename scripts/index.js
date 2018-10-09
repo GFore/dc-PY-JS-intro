@@ -109,7 +109,23 @@ function tipCalc() {
     totBillAmt += tipAmt
     perPerson = totBillAmt / Number(document.getElementById("id_billSplit").value)
 
-    document.getElementById("id_result7").innerHTML = `Result: <span class="res">Tip Amount: $${tipAmt.toFixed(2)}</span>`
-    document.getElementById("id_result7").innerHTML += ` <span class="res">Total Amount: $${totBillAmt.toFixed(2)}</span>`
-    document.getElementById("id_result7").innerHTML += ` <span class="res">Amount per person: $${perPerson.toFixed(2)}</span>`
+    document.getElementById("id_result7").innerHTML = `Result: <span class="res">Tip: $${tipAmt.toFixed(2)}</span>`
+    document.getElementById("id_result7").innerHTML += ` <span class="res"> Total: $${totBillAmt.toFixed(2)}</span>`
+    document.getElementById("id_result7").innerHTML += ` <span class="res"> Each: $${perPerson.toFixed(2)}</span>`
+}
+
+
+function translate(ltr) {
+    const lettersToNumbers = {'A': '4', 'E': '3', 'G': '6', 'I': '1', 'O': '0', 'S': '5', 'T': '7',};
+    return lettersToNumbers[ltr] || ltr;
+  }
+
+function leetSpeak() {
+    p = document.getElementById("id_phrase1").value.toUpperCase();
+    let translation = ``;
+    
+    for (let character of p) {
+        translation += translate(character);
+    };
+    document.getElementById("id_result8").innerHTML = `Result: <span class="res">Leet Speak: ${translation}</span>`;
 }

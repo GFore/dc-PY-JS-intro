@@ -10,8 +10,8 @@
 </head>
 <body>
     <header></head><h1>Python Exercises via JS</h1></header>
-    <!-- <section><h2>Python 102</h2> -->
     <script src="scripts/index.js"></script>
+    <section>
     <details open><summary><h2>Python 102</h2></summary>
         <div class="exercise">
             <h3>Hello, you!</h3>
@@ -58,7 +58,7 @@
 
             </div>
         </div>
-    <!-- </section> --></details>
+    </details>
 
     <details open><summary><h2>Python 103</h2></summary>
         <div class="exercise">
@@ -141,5 +141,20 @@
                     <div class="result" id="id_result7">Result: </div>
                 </div>
             </div>
-    <!-- </section> --></details>
+        </details>
+        <details open><summary><h2>Python 104</h2></summary>
+            <div class="exercise">
+                <h3>Leet Speak</h3>
+                <div class="QandA">
+                    <p class="ques">Prompt the user for a phrase, and then convert it to Leetspeak.</p>
+                    <div class="ans">
+                       <label for="id_phrase1">Enter your phrase: </label><input type="text" name="phrase1" id="id_phrase1">
+                        <button onclick="leetSpeak();">Submit</button>
+                        <button class="reset" onclick="clearResult(['id_phrase1'], 'id_result8', [])">Reset</button>
+                    </div>
+                    <div class="result" id="id_result8">Result: </div>
+                </div>
+            </div>
+        </details>
+    </section>
 </body>
